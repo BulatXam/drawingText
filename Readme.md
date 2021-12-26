@@ -5,7 +5,7 @@ ___
 ### Example
 
 ```python3
-from dev.pillow_draw_text import write_in_image
+from pillow_draw_text import write_in_image
 
 text = "предложения разделить по словам пробелами и в каждую линию добавить по слову, пока не дойдет до лимита символов"
 draw_img = write_in_image(
