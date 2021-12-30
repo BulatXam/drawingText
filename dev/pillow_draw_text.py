@@ -2,12 +2,16 @@ from PIL import Image, ImageDraw, ImageFont
 
 
 def split_lines(text, line_size):
+    """Функция для разреза текста на строки.
+
+    Выводит список со строками символов,
+    которые не больше требуемого максимума. """
     split_text = text.split(" ")
     lines = []
     line = ""
     word_count = 0
 
-    while True:  # Бесконечный цикл, так как мы не знаем количество строк.
+    for _ in split_text:
         line += split_text[word_count]+" "
 
         if len(line) > line_size:
@@ -25,7 +29,10 @@ def split_lines(text, line_size):
     return lines
 
 
-def split_text_into_lines(text, width, height, font_size):
+def split_text_into_lines(text, width, font_size):
+    """Фунция для разреза текста с помощью символа новой строки-\n
+    
+    Соединяет список из строк в цельный текст"""
     letters_count_in_line = int(width / (font_size/2))
     split_lines_text = \
         "\n".join(split_lines(text, line_size=letters_count_in_line))
@@ -40,7 +47,6 @@ def write_in_image(image_path: str,
                    height: int,
                    font_size: int = 50,
                    font: ImageFont or None = None) -> Image:
-
     image = Image.open(image_path)
 
     if not font:
