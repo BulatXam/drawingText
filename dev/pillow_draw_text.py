@@ -29,7 +29,7 @@ def split_lines(text, line_size):
     return lines
 
 
-def split_text_into_lines(text, width, font_size):
+def split_text_into_lines(text, width, height, font_size):
     """Фунция для разреза текста с помощью символа новой строки-\n
     
     Соединяет список из строк в цельный текст"""
